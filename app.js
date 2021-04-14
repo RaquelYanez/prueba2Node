@@ -8,15 +8,15 @@ const app = express();
 //BD
 const mongoose = require('mongoose');
 //conection to our bbdd local
-const uri = 'mongodb://localhost:27017/appjs';
-const options ={
-    useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true
-}
+const uri = 'mongodb://localhost:27017/myapp';
+const options = {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true};
 //conection
 mongoose.connect(uri, options).then(
-    ()=>{console.log('conectado a mongo') },
-    err =>{err}
-)
+    ()=>{console.log('conectado a MongoDB') },
+    err =>{console.log(err)}
+);
+
+
 //middleware
 app.use(morgan('tiny'));
 app.use(cors());
